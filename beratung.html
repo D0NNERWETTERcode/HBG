@@ -111,75 +111,96 @@
                     Wir nehmen uns Zeit für Sie. Teilen Sie uns Ihr Anliegen mit und wir melden uns zur Terminvereinbarung.
                 </p>
 </div>
-<form class="space-y-12">
-<!-- Input Fields Group -->
+<!-- SUCCESS / ERROR MESSAGES -->
+<div id="success-msg" class="hidden text-center py-16">
+<span class="material-symbols-outlined text-[#775a19] text-7xl mb-6 block">check_circle</span>
+<h2 class="font-headline text-3xl text-primary font-bold mb-4">Anfrage erfolgreich gesendet!</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md mx-auto">Vielen Dank! Wir haben Ihre Anfrage erhalten. Eine <strong>Bestätigungs-E-Mail</strong> ist bereits auf dem Weg zu Ihnen. Wir melden uns in Kürze.</p>
+<a href="index.html" class="inline-block mt-10 bg-primary text-white px-10 py-4 rounded-md font-bold hover:brightness-110 transition-all">Zurück zur Startseite</a>
+</div>
+<div id="error-msg" class="hidden text-center py-12 bg-red-50 border border-red-200 rounded-xl">
+<span class="material-symbols-outlined text-red-500 text-5xl mb-4 block">error</span>
+<h3 class="font-headline text-2xl text-primary font-bold mb-3">Etwas ist schiefgelaufen.</h3>
+<p class="text-on-surface-variant">Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an <a href="mailto:info@hbg-bildung.de" class="text-[#775a19] font-bold underline">info@hbg-bildung.de</a>.</p>
+</div>
+
+<form id="contact-form" class="space-y-12">
+<!-- Web3Forms Konfiguration - BITTE ZUGRIFFSSCHLÜSSEL EINTRAGEN -->
+<!-- Schritt: web3forms.com aufrufen, info@hbg-bildung.de eingeben, E-Mail bestätigen, Schlüssel hier eintragen -->
+<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+<input type="hidden" name="subject" value="Neue Bewerbung/Anfrage – HBG Bildungsgesellschaft">
+<input type="hidden" name="from_name" value="HBG Bildungsgesellschaft">
+<!-- Botschutz -->
+<input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+<!-- Chip-Werte (werden automatisch aktualisiert) -->
+<input type="hidden" name="Ich bin ein" id="hidden-person-type" value="Privatperson">
+<input type="hidden" name="Interesse" id="hidden-interest" value="Weiterbildung">
+
+<!-- Eingabefelder -->
 <div class="space-y-10">
 <div class="flex flex-col gap-2">
 <label class="text-xs font-bold uppercase tracking-widest text-slate-400" for="name">Voller Name</label>
-<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="name" placeholder="Name hier eingeben" type="text">
+<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="name" name="name" placeholder="Name hier eingeben" type="text" required>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-xs font-bold uppercase tracking-widest text-slate-400" for="company">Firma (optional)</label>
-<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="company" placeholder="Beispiel Agentur" type="text">
+<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="company" name="Firma" placeholder="Beispiel Agentur" type="text">
 </div>
 <div class="flex flex-col gap-2">
-<label class="text-xs font-bold uppercase tracking-widest text-slate-400" for="email">Ihre E-Mail</label>
-<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="email" placeholder="beispiel@gmail.com" type="email">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-400" for="email">Ihre E-Mail <span class="text-red-400">*</span></label>
+<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="email" name="email" placeholder="beispiel@gmail.com" type="email" required>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-xs font-bold uppercase tracking-widest text-slate-400" for="phone">Ihre Telefonnummer</label>
-<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="phone" placeholder="+49 012325800213" type="tel">
+<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="phone" name="Telefon" placeholder="+49 012325800213" type="tel">
 </div>
 </div>
-<!-- Chips Section 1: "Ich bin ein/e ..." -->
+
+<!-- Chips: Ich bin ein/e ... -->
 <div>
 <h4 class="font-headline text-2xl text-primary font-bold mb-6">Ich bin ein/e ...</h4>
-<div class="flex flex-wrap gap-4">
-<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
-                        Unternehmen 
-                        <span class="w-2 h-2 rounded-full bg-slate-200 group-[.active]:bg-secondary"></span>
+<div class="flex flex-wrap gap-4" id="chips-person">
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" data-value="Unternehmen" type="button">
+    Unternehmen <span class="w-2 h-2 rounded-full bg-slate-200 group-[.active]:bg-secondary"></span>
 </button>
-<button class="chip-selectable active bg-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group border-secondary" type="button">
-                        Privatperson 
-                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+<button class="chip-selectable active bg-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group border-secondary" data-value="Privatperson" type="button">
+    Privatperson <span class="w-2 h-2 rounded-full bg-secondary"></span>
 </button>
-<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
-                        Kostenträger 
-                        <span class="w-2 h-2 rounded-full bg-slate-200 group-[.active]:bg-secondary"></span>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" data-value="Kostenträger" type="button">
+    Kostenträger <span class="w-2 h-2 rounded-full bg-slate-200 group-[.active]:bg-secondary"></span>
 </button>
 </div>
 </div>
-<!-- Chips Section 2: "Ich bin interessiert an ..." -->
+
+<!-- Chips: Interesse -->
 <div>
 <h4 class="font-headline text-2xl text-primary font-bold mb-6">Ich bin interessiert an ...</h4>
-<div class="flex flex-wrap gap-4">
-<button class="chip-selectable active bg-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group border-secondary" type="button">
-                        Weiterbildung 
-                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+<div class="flex flex-wrap gap-4" id="chips-interest">
+<button class="chip-selectable active bg-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group border-secondary" data-value="Weiterbildung" type="button">
+    Weiterbildung <span class="w-2 h-2 rounded-full bg-secondary"></span>
 </button>
-<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
-                        Förderung 
-                        <span class="w-2 h-2 rounded-full bg-slate-200"></span>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" data-value="Förderung" type="button">
+    Förderung <span class="w-2 h-2 rounded-full bg-slate-200"></span>
 </button>
-<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
-                        Kooperation 
-                        <span class="w-2 h-2 rounded-full bg-slate-200"></span>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" data-value="Kooperation" type="button">
+    Kooperation <span class="w-2 h-2 rounded-full bg-slate-200"></span>
 </button>
-<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
-                        Stellenanzeige 
-                        <span class="w-2 h-2 rounded-full bg-slate-200"></span>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" data-value="Stellenanzeige" type="button">
+    Stellenanzeige <span class="w-2 h-2 rounded-full bg-slate-200"></span>
 </button>
-<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
-                        Sonstiges 
-                        <span class="w-2 h-2 rounded-full bg-slate-200"></span>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" data-value="Sonstiges" type="button">
+    Sonstiges <span class="w-2 h-2 rounded-full bg-slate-200"></span>
 </button>
 </div>
 </div>
-<!-- Submit Button -->
+
+<!-- Senden-Button -->
 <div class="pt-8">
-<button class="w-full bg-primary text-white py-6 rounded-md font-bold text-lg hover:border-b-4 hover:border-secondary transition-all active:scale-[0.98] editorial-shadow" type="submit">
-                        Terminanfrage senden
-                    </button>
+<button id="submit-btn" class="w-full bg-primary text-white py-6 rounded-md font-bold text-lg hover:border-b-4 hover:border-secondary transition-all active:scale-[0.98] editorial-shadow flex items-center justify-center gap-3" type="submit">
+    <span id="btn-text">Terminanfrage senden</span>
+    <span id="btn-spinner" class="hidden material-symbols-outlined" style="animation: spin 1s linear infinite;">autorenew</span>
+</button>
+<style>@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }</style>
 </div>
 </form>
 </div>
@@ -207,22 +228,19 @@
 </div>
 </footer>
 <script>
-        const header = document.querySelector('header');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) { header.classList.add('scrolled'); }
+        else { header.classList.remove('scrolled'); }
+    });
 
-        // Simple chip select logic
-        document.querySelectorAll('.chip-selectable').forEach(chip => {
+    // Chip-Auswahl
+    function setupChips(containerId, hiddenId) {
+        const container = document.getElementById(containerId);
+        const hidden = document.getElementById(hiddenId);
+        container.querySelectorAll('.chip-selectable').forEach(chip => {
             chip.addEventListener('click', () => {
-                // Find peers in the same section
-                const section = chip.closest('div');
-                section.querySelectorAll('.chip-selectable').forEach(c => {
+                container.querySelectorAll('.chip-selectable').forEach(c => {
                     c.classList.remove('active', 'bg-white', 'border-secondary');
                     c.classList.add('bg-white/50');
                     c.querySelector('span').classList.remove('bg-secondary');
@@ -232,7 +250,60 @@
                 chip.classList.remove('bg-white/50');
                 chip.querySelector('span').classList.add('bg-secondary');
                 chip.querySelector('span').classList.remove('bg-slate-200');
+                hidden.value = chip.dataset.value;
             });
         });
+    }
+    setupChips('chips-person', 'hidden-person-type');
+    setupChips('chips-interest', 'hidden-interest');
+
+    // Formular-Übermittlung per AJAX
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnSpinner = document.getElementById('btn-spinner');
+        const successMsg = document.getElementById('success-msg');
+        const errorMsg = document.getElementById('error-msg');
+
+        // Validierung
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        if (!name || !email) {
+            alert('Bitte füllen Sie Name und E-Mail-Adresse aus.');
+            return;
+        }
+
+        // Lade-Status
+        btnText.textContent = 'Wird gesendet ...';
+        btnSpinner.classList.remove('hidden');
+        btn.disabled = true;
+        btn.classList.add('opacity-70');
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                form.style.display = 'none';
+                successMsg.classList.remove('hidden');
+                errorMsg.classList.add('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                throw new Error('Fehler beim Senden');
+            }
+        } catch (err) {
+            errorMsg.classList.remove('hidden');
+            btnText.textContent = 'Terminanfrage senden';
+            btnSpinner.classList.add('hidden');
+            btn.disabled = false;
+            btn.classList.remove('opacity-70');
+        }
+    });
     </script>
 </body></html>
