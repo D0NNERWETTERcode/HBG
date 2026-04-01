@@ -58,7 +58,7 @@
             box-shadow: 0 4px 12px rgba(119, 90, 25, 0.1);
         }
         header {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         header.scrolled {
             background-color: rgba(255, 255, 255, 0.7) !important;
@@ -71,19 +71,23 @@
         header.scrolled .nav-link:hover {
             color: #775a19 !important;
         }
-        header.scrolled .nav-container {
-            height: 120px !important;
+        header.scrolled .logo-light {
+            opacity: 0;
         }
-        header.scrolled .logo-img {
-            height: 80px !important;
+        header.scrolled .logo-dark {
+            opacity: 1;
+        }
+        .logo-img {
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
 <header class="fixed top-0 w-full z-50 bg-[#041627]/98 backdrop-blur-xl shadow-lg border-b border-white/5">
 <div class="max-w-screen-2xl mx-auto flex justify-between items-center h-[120px] px-8 nav-container transition-all duration-500">
-<a class="flex items-center" href="index.html">
-<img alt="HBG Logo" class="h-[80px] w-auto logo-img transition-all duration-500" src="logo_light.png" id="header-logo">
+<a class="flex items-center relative h-[80px] w-48" href="index.html">
+<img alt="HBG Logo Light" class="h-full w-auto logo-img logo-light absolute inset-0 opacity-100" src="logo_light.png">
+<img alt="HBG Logo Dark" class="h-full w-auto logo-img logo-dark absolute inset-0 opacity-0" src="logo_dark.png">
 </a>
 <nav class="hidden md:flex items-center space-x-10">
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="index.html">Home</a>
@@ -204,15 +208,12 @@
 </footer>
 <script>
         const header = document.querySelector('header');
-        const logo = document.getElementById('header-logo');
         
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
-                logo.src = 'logo_dark.png';
             } else {
                 header.classList.remove('scrolled');
-                logo.src = 'logo_light.png';
             }
         });
 

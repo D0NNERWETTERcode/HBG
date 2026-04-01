@@ -80,7 +80,7 @@
             background: radial-gradient(circle at top right, #1a2b3c, #041627);
         }
         header {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         header.scrolled {
             background-color: rgba(255, 255, 255, 0.7) !important;
@@ -93,11 +93,14 @@
         header.scrolled .nav-link:hover {
             color: #775a19 !important;
         }
-        header.scrolled .nav-container {
-            height: 120px !important;
+        header.scrolled .logo-light {
+            opacity: 0;
         }
-        header.scrolled .logo-img {
-            height: 80px !important;
+        header.scrolled .logo-dark {
+            opacity: 1;
+        }
+        .logo-img {
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
@@ -105,8 +108,9 @@
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 bg-[#041627]/98 backdrop-blur-xl shadow-lg border-b border-white/5">
 <div class="max-w-screen-2xl mx-auto flex justify-between items-center h-[120px] px-8 nav-container transition-all duration-500">
-<a class="flex items-center" href="index.html">
-<img alt="HBG Logo" class="h-[80px] w-auto logo-img transition-all duration-500" src="logo_light.png" id="header-logo">
+<a class="flex items-center relative h-[80px] w-48" href="index.html">
+<img alt="HBG Logo Light" class="h-full w-auto logo-img logo-light absolute inset-0 opacity-100" src="logo_light.png">
+<img alt="HBG Logo Dark" class="h-full w-auto logo-img logo-dark absolute inset-0 opacity-0" src="logo_dark.png">
 </a>
 <nav class="hidden md:flex items-center space-x-10">
 <a class="font-headline font-medium text-lg leading-tight text-white hover:text-secondary transition-all nav-link" href="index.html">Home</a>
@@ -125,6 +129,25 @@
 <main>
 <!-- Heritage Masthead / Hero Section -->
 <section class="pt-44 pb-20 px-8 relative overflow-hidden bg-[#041627] text-white">
+<!-- Info Bar -->
+<div class="max-w-screen-xl mx-auto mb-16 relative z-20">
+<div class="flex flex-wrap justify-between items-center gap-8 py-6 px-12 bg-white/5 backdrop-blur-md rounded-xl border border-white/10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span class="font-headline font-bold text-xl">§ 34a Sachkunde</span>
+</div>
+<div class="w-px h-8 bg-white/10 hidden md:block"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">payments</span>
+<span class="font-headline font-bold text-xl">100% Förderungsfähig (AZAV)</span>
+</div>
+<div class="w-px h-8 bg-white/10 hidden md:block"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">person_pin</span>
+<span class="font-headline font-bold text-xl">Individuelle Karriereberatung</span>
+</div>
+</div>
+</div>
 <div class="absolute inset-0 z-0">
 <img alt="Hanseatic Port View" class="w-full h-full object-cover" data-alt="Modern maritime architecture of a Hanseatic port city" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRGVstw5T4RwYGKo3wxserZVELoGK_HvK8-W5MWycCQYsY6pNMWw1ucY2QjmkT0qWUC9ZdoLchgKpuiYPaMAE7f8NZN3GM3UmM-VGWmVuIXhe51s-k2u0_R5YKicM6woTdRFslZSTUY3PgT9vbLCK0S0erMYN902640qoV_-g_hwivfQNlxGDyK6pYyo7DYK9a0ad7-u7oBhqv1ul7n49rj6US4VqI5HW6L3Txo6KgYGhrBcNJDl24pW2JeSZG06ddiyFHt1nktohe">
 <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
@@ -340,15 +363,12 @@
 </footer>
 <script>
     const header = document.querySelector('header');
-    const logo = document.getElementById('header-logo');
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
-            logo.src = 'logo_dark.png';
         } else {
             header.classList.remove('scrolled');
-            logo.src = 'logo_light.png';
         }
     });
 </script>
