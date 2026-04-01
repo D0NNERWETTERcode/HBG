@@ -102,13 +102,32 @@
         .logo-img {
             transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+        .ham-line {
+            transition: all 0.3s ease;
+        }
+        #mobile-menu-btn.is-open .ham-line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        #mobile-menu-btn.is-open .ham-line:nth-child(2) {
+            opacity: 0;
+        }
+        #mobile-menu-btn.is-open .ham-line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 bg-[#041627]/98 backdrop-blur-xl shadow-lg border-b border-white/5">
-<div class="max-w-screen-2xl mx-auto flex justify-between items-center h-[120px] px-8 nav-container transition-all duration-500">
-<a class="flex items-center relative h-[80px] w-48" href="index.html">
+<div class="max-w-screen-2xl mx-auto flex justify-between items-center h-[80px] md:h-[120px] px-4 md:px-8 nav-container transition-all duration-500">
+<a class="flex items-center relative h-[55px] w-36 md:h-[80px] md:w-48" href="index.html">
 <img alt="HBG Logo Light" class="h-full w-auto logo-img logo-light absolute inset-0 opacity-100" src="logo_light.png">
 <img alt="HBG Logo Dark" class="h-full w-auto logo-img logo-dark absolute inset-0 opacity-0" src="logo_dark.png">
 </a>
@@ -119,36 +138,50 @@
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="sachkunde-34a.html">Sachkunde 34A</a>
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="faq.html">FAQ</a>
 </nav>
-<div class="flex items-center">
-<a class="bg-secondary text-white px-6 py-2.5 rounded-md font-medium text-sm hover:brightness-110 transition-all shadow-lg" href="beratung.html">
-                    Jetzt bewerben
-                </a>
+<div class="flex items-center gap-3">
+<a class="hidden md:inline-block bg-secondary text-white px-6 py-2.5 rounded-md font-medium text-sm hover:brightness-110 transition-all shadow-lg" href="beratung.html">Jetzt bewerben</a>
+<!-- Hamburger -->
+<button id="mobile-menu-btn" class="md:hidden flex flex-col gap-[6px] p-2 z-[60] relative" aria-label="Menü öffnen">
+<span class="ham-line block w-6 h-[2px] bg-white rounded-full"></span>
+<span class="ham-line block w-6 h-[2px] bg-white rounded-full"></span>
+<span class="ham-line block w-6 h-[2px] bg-white rounded-full"></span>
+</button>
 </div>
 </div>
 </header>
+<!-- Mobile Full-Screen Menu -->
+<div id="mobile-menu" class="fixed inset-0 z-[55] bg-[#041627] flex flex-col items-center justify-center gap-6 translate-x-full md:hidden">
+<a href="index.html" class="font-headline text-4xl text-white hover:text-secondary transition-colors">Home</a>
+<a href="ueber-uns.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors">Über uns</a>
+<a href="foerderung.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors">Förderung</a>
+<a href="sachkunde-34a.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors">Sachkunde 34A</a>
+<a href="faq.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors">FAQ</a>
+<div class="w-16 h-px bg-white/20 my-4"></div>
+<a href="beratung.html" class="bg-secondary text-white px-10 py-4 rounded-md font-bold text-lg hover:brightness-110 transition-all shadow-xl">Jetzt bewerben</a>
+</div>
 <main>
 <!-- Heritage Masthead / Hero Section -->
-<section class="pt-44 pb-20 px-8 relative overflow-hidden bg-[#041627] text-white">
+<section class="pt-24 md:pt-44 pb-12 md:pb-20 px-4 md:px-8 relative overflow-hidden bg-[#041627] text-white min-h-[85vh] md:min-h-0 flex flex-col justify-center">
 <div class="absolute inset-0 z-0">
 <img alt="Hanseatic Port View" class="w-full h-full object-cover" data-alt="Modern maritime architecture of a Hanseatic port city" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRGVstw5T4RwYGKo3wxserZVELoGK_HvK8-W5MWycCQYsY6pNMWw1ucY2QjmkT0qWUC9ZdoLchgKpuiYPaMAE7f8NZN3GM3UmM-VGWmVuIXhe51s-k2u0_R5YKicM6woTdRFslZSTUY3PgT9vbLCK0S0erMYN902640qoV_-g_hwivfQNlxGDyK6pYyo7DYK9a0ad7-u7oBhqv1ul7n49rj6US4VqI5HW6L3Txo6KgYGhrBcNJDl24pW2JeSZG06ddiyFHt1nktohe">
 <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
 <div class="absolute inset-0 hanseatic-gradient opacity-60"></div>
 </div>
-<div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full py-24 md:py-40">
+<div class="relative z-10 max-w-screen-2xl mx-auto px-4 md:px-8 w-full py-10 md:py-40">
 <div class="grid grid-cols-12 gap-8 items-center">
 <div class="col-span-12 lg:col-span-7">
-<span class="font-label uppercase tracking-widest text-secondary font-bold text-sm mb-6 block">Tradition trifft Exzellenz</span>
-<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-white font-bold leading-[0.9] tracking-tighter mb-8">
+<span class="font-label uppercase tracking-widest text-secondary font-bold text-xs md:text-sm mb-4 md:mb-6 block">Tradition trifft Exzellenz</span>
+<h1 class="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white font-bold leading-[1.0] md:leading-[0.9] tracking-tight md:tracking-tighter mb-5 md:mb-8">
                             Hanseatische<br>Bildungsgesellschaft
                         </h1>
-<p class="text-white/80 text-lg md:text-xl max-w-xl mb-12 font-light leading-relaxed">
+<p class="text-white/80 text-base md:text-xl max-w-xl mb-8 md:mb-12 font-light leading-relaxed">
                             Ihr Partner für erstklassige berufliche Qualifikation und maritime Verlässlichkeit im Herzen der norddeutschen Bildungslandschaft.
                         </p>
-<div class="flex flex-wrap gap-4">
-<a href="#kurse" class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-md font-bold text-base hover:scale-105 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ease-out text-center">
+<div class="flex flex-col sm:flex-row gap-3 md:gap-4">
+<a href="#kurse" class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-md font-bold text-base hover:scale-105 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ease-out text-center w-full sm:w-auto">
                                 Kurse entdecken
                             </a>
-<a href="beratung.html" class="border border-white/30 backdrop-blur-md text-white px-8 py-4 rounded-md font-bold text-base hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ease-out text-center">
+<a href="beratung.html" class="border border-white/30 backdrop-blur-md text-white px-8 py-4 rounded-md font-bold text-base hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ease-out text-center w-full sm:w-auto">
                                 Beratungstermin vereinbaren
                             </a>
 </div>
@@ -181,15 +214,15 @@
 </div></div>
 </section>
 <!-- Programs Section (Bento Grid) -->
-<section id="kurse" class="py-24 bg-surface">
-<div class="max-w-screen-2xl mx-auto px-8">
+<section id="kurse" class="py-14 md:py-24 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-4 md:px-8">
 <div class="mb-20">
 <span class="font-label uppercase tracking-widest text-secondary font-bold text-sm mb-4 block">Bildungsangebot</span>
 <h2 class="font-headline text-4xl md:text-5xl text-primary font-bold">Exzellenz in der Weiterbildung</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <!-- Major Card -->
-<a href="sachkunde-34a.html" class="md:col-span-2 bg-surface-container-low p-12 rounded-xl flex flex-col justify-between group hover:bg-surface-container-high transition-colors duration-500">
+<a href="sachkunde-34a.html" class="md:col-span-2 bg-surface-container-low p-6 md:p-12 rounded-xl flex flex-col justify-between group hover:bg-surface-container-high transition-colors duration-500">
 <div>
 <div class="bg-primary-container inline-flex p-4 rounded-lg mb-8">
 <span class="material-symbols-outlined text-secondary-container text-3xl" data-icon="shield_person">shield_person</span>
@@ -220,7 +253,7 @@
 </div>
 </a>
 <!-- Secondary Card 2 (Google Reviews) -->
-<div class="md:col-span-3 bg-white p-8 md:p-10 rounded-xl editorial-shadow border border-slate-100 overflow-hidden relative">
+<div class="md:col-span-3 bg-white p-5 md:p-10 rounded-xl editorial-shadow border border-slate-100 overflow-hidden relative">
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
 <div>
 <h3 class="font-headline text-4xl text-primary font-bold">Google Bewertungen</h3>
@@ -289,8 +322,8 @@
 </div>
 </section>
 <!-- Trust & Values -->
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-screen-2xl mx-auto px-8">
+<section class="py-14 md:py-24 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto px-4 md:px-8">
 <div class="flex flex-col md:flex-row gap-16 items-center">
 <div class="w-full md:w-1/2">
 <div class="relative rounded-xl overflow-hidden shadow-2xl">
@@ -320,11 +353,11 @@
 </div>
 </section>
 </main>
-<footer class="bg-primary pt-24 pb-12 text-white border-t border-white/5">
-<div class="max-w-screen-2xl mx-auto px-8">
-<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<footer class="bg-primary pt-12 md:pt-24 pb-8 md:pb-12 text-white border-t border-white/5">
+<div class="max-w-screen-2xl mx-auto px-4 md:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12">
 <a class="flex items-center" href="index.html">
-<img alt="HBG Logo" class="h-56 w-auto" src="logo_light.png">
+<img alt="HBG Logo" class="h-28 md:h-56 w-auto" src="logo_light.png">
 </a>
 <div class="flex flex-wrap justify-center gap-10 text-xs font-bold uppercase tracking-widest text-white/60">
 <a class="hover:text-secondary transition-colors" href="index.html">Home</a>
@@ -344,13 +377,29 @@
 </footer>
 <script>
     const header = document.querySelector('header');
-    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
+    });
+
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        mobileMenuBtn.classList.toggle('is-open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            mobileMenuBtn.classList.remove('is-open');
+            document.body.style.overflow = '';
+        });
     });
 </script>
 </body></html>
