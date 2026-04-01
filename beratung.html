@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#041627",
+              "secondary": "#775a19",
+              "surface": "#f8f9fa",
+              "surface-container-low": "#f3f4f5",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#191c1d",
+              "on-surface-variant": "#44474c",
+              "outline-variant": "#c4c6cd"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "md": "0.375rem"}
+          },
+        },
+      }
+    </script>
+<style>
+        .editorial-shadow {
+            box-shadow: 0 20px 40px -20px rgba(4, 22, 39, 0.04);
+        }
+        .form-input-underline {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid rgba(196, 198, 205, 0.4);
+            background: transparent;
+            padding-left: 0;
+            padding-right: 0;
+            transition: all 0.3s ease;
+        }
+        .form-input-underline:focus {
+            border-bottom-color: #775a19;
+            box-shadow: none;
+            outline: none;
+        }
+        .chip-selectable {
+            border: 2px solid rgba(196, 198, 205, 0.2);
+            transition: all 0.3s ease;
+        }
+        .chip-selectable.active {
+            border-color: #775a19;
+            background: #ffffff;
+            color: #041627;
+            box-shadow: 0 4px 12px rgba(119, 90, 25, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<header class="fixed top-0 w-full z-50 bg-[#041627]/98 backdrop-blur-xl shadow-lg border-b border-white/5">
+<div class="max-w-screen-2xl mx-auto flex justify-between items-center h-56 px-8">
+<a class="flex items-center" href="index.html">
+<img alt="HBG Logo" class="h-48 w-auto" src="logo_light.png">
+</a>
+<nav class="hidden md:flex items-center space-x-10">
+<a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all" href="index.html">Home</a>
+<a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all" href="ueber-uns.html">Über uns</a>
+<a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all" href="foerderung.html">Förderung</a>
+<a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all" href="sachkunde-34a.html">Sachkunde 34A</a>
+<a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all" href="faq.html">FAQ</a>
+</nav>
+<div class="flex items-center">
+<a class="bg-secondary text-white px-6 py-2.5 rounded-md font-medium text-sm hover:brightness-110 transition-all shadow-md" href="beratung.html">
+                    Jetzt bewerben
+                </a>
+</div>
+</div>
+</header>
+<main class="pt-80 pb-24">
+<div class="max-w-screen-md mx-auto px-8">
+<div class="mb-16">
+<h1 class="font-headline text-5xl md:text-6xl text-primary font-bold mb-6">Beratungstermin</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">
+                    Wir nehmen uns Zeit für Sie. Teilen Sie uns Ihr Anliegen mit und wir melden uns zur Terminvereinbarung.
+                </p>
+</div>
+<form class="space-y-12">
+<!-- Input Fields Group -->
+<div class="space-y-10">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-400" for="name">Voller Name</label>
+<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="name" placeholder="Name hier eingeben" type="text">
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-400" for="company">Firma (optional)</label>
+<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="company" placeholder="Beispiel Agentur" type="text">
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-400" for="email">Ihre E-Mail</label>
+<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="email" placeholder="beispiel@gmail.com" type="email">
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase tracking-widest text-slate-400" for="phone">Ihre Telefonnummer</label>
+<input class="form-input-underline text-lg py-4 placeholder:text-slate-200" id="phone" placeholder="+49 012325800213" type="tel">
+</div>
+</div>
+<!-- Chips Section 1: "Ich bin ein/e ..." -->
+<div>
+<h4 class="font-headline text-2xl text-primary font-bold mb-6">Ich bin ein/e ...</h4>
+<div class="flex flex-wrap gap-4">
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
+                        Unternehmen 
+                        <span class="w-2 h-2 rounded-full bg-slate-200 group-[.active]:bg-secondary"></span>
+</button>
+<button class="chip-selectable active bg-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group border-secondary" type="button">
+                        Privatperson 
+                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
+                        Kostenträger 
+                        <span class="w-2 h-2 rounded-full bg-slate-200 group-[.active]:bg-secondary"></span>
+</button>
+</div>
+</div>
+<!-- Chips Section 2: "Ich bin interessiert an ..." -->
+<div>
+<h4 class="font-headline text-2xl text-primary font-bold mb-6">Ich bin interessiert an ...</h4>
+<div class="flex flex-wrap gap-4">
+<button class="chip-selectable active bg-white px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group border-secondary" type="button">
+                        Weiterbildung 
+                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
+                        Förderung 
+                        <span class="w-2 h-2 rounded-full bg-slate-200"></span>
+</button>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
+                        Kooperation 
+                        <span class="w-2 h-2 rounded-full bg-slate-200"></span>
+</button>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
+                        Stellenanzeige 
+                        <span class="w-2 h-2 rounded-full bg-slate-200"></span>
+</button>
+<button class="chip-selectable bg-white/50 px-8 py-3 rounded-full text-sm font-bold flex items-center gap-2 group hover:border-secondary/40" type="button">
+                        Sonstiges 
+                        <span class="w-2 h-2 rounded-full bg-slate-200"></span>
+</button>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-8">
+<button class="w-full bg-primary text-white py-6 rounded-md font-bold text-lg hover:border-b-4 hover:border-secondary transition-all active:scale-[0.98] editorial-shadow" type="submit">
+                        Terminanfrage senden
+                    </button>
+</div>
+</form>
+</div>
+</main>
+<footer class="bg-primary pt-24 pb-12 text-white border-t border-white/5">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<a class="flex items-center" href="index.html">
+<img alt="HBG Logo" class="h-56 w-auto" src="logo_light.png">
+</a>
+<div class="flex flex-wrap justify-center gap-10 text-xs font-bold uppercase tracking-widest text-white/60">
+<a class="hover:text-secondary transition-colors" href="index.html">Home</a>
+<a class="hover:text-secondary transition-colors" href="ueber-uns.html">Über uns</a>
+<a class="hover:text-secondary transition-colors" href="foerderung.html">Förderung</a>
+<a class="hover:text-secondary transition-colors" href="sachkunde-34a.html">Sachkunde 34A</a>
+<a class="hover:text-secondary transition-colors" href="faq.html">FAQ</a>
+<a class="hover:text-secondary transition-colors" href="impressum.html">Impressum</a>
+<a class="hover:text-secondary transition-colors" href="datenschutz.html">Datenschutz</a>
+<a class="hover:text-white transition-colors" href="agb.html">AGB</a>
+</div>
+</div>
+<div class="border-t border-white/10 mt-16 pt-8 text-center text-xs font-medium text-white/40">
+                © 2026 Hanseatische Bildungsgesellschaft. Alle Rechte vorbehalten.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple chip select logic
+        document.querySelectorAll('.chip-selectable').forEach(chip => {
+            chip.addEventListener('click', () => {
+                // Find peers in the same section
+                const section = chip.closest('div');
+                section.querySelectorAll('.chip-selectable').forEach(c => {
+                    c.classList.remove('active', 'bg-white', 'border-secondary');
+                    c.classList.add('bg-white/50');
+                    c.querySelector('span').classList.remove('bg-secondary');
+                    c.querySelector('span').classList.add('bg-slate-200');
+                });
+                chip.classList.add('active', 'bg-white', 'border-secondary');
+                chip.classList.remove('bg-white/50');
+                chip.querySelector('span').classList.add('bg-secondary');
+                chip.querySelector('span').classList.remove('bg-slate-200');
+            });
+        });
+    </script>
+</body></html>
