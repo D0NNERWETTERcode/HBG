@@ -1,3 +1,8 @@
+// Protect Material Icons from being translated into text
+document.querySelectorAll('.material-symbols-outlined').forEach(function(icon) {
+  icon.classList.add('notranslate');
+});
+
 // HBG Language Switcher – Google Translate Integration
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
