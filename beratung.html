@@ -104,16 +104,17 @@ body { top: 0px !important; }
     to   { opacity: 1; transform: translateY(0)  scale(1); }
 }
 header.scrolled #lang-btn { color: #041627 !important; }
+.material-symbols-outlined { font-family: 'Material Symbols Outlined' !important; }
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
-<header class="fixed top-0 w-full z-50 bg-[#041627]/98 backdrop-blur-xl shadow-lg border-b border-white/5">
+<header class="fixed top-0 w-full z-50 bg-[#041627]/98 backdrop-blur-xl shadow-lg border-b border-white/5 notranslate">
 <div class="max-w-screen-2xl mx-auto flex justify-between items-center h-[80px] md:h-[120px] px-4 md:px-8 nav-container transition-all duration-500">
 <a class="flex items-center relative h-[55px] w-36 md:h-[80px] md:w-48" href="index.html">
 <img alt="HBG Logo Light" class="h-full w-auto logo-img logo-light absolute inset-0 opacity-100" src="logo_light.png">
 <img alt="HBG Logo Dark" class="h-full w-auto logo-img logo-dark absolute inset-0 opacity-0" src="logo_dark.png">
 </a>
-<nav class="hidden md:flex items-center space-x-10">
+<nav class="hidden md:flex items-center space-x-10 translate">
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="index.html">Home</a>
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="ueber-uns.html">Über uns</a>
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="foerderung.html">Förderung</a>
@@ -153,12 +154,12 @@ header.scrolled #lang-btn { color: #041627 !important; }
 </div>
 </header>
 <!-- Mobile Full-Screen Menu -->
-<div id="mobile-menu" class="fixed inset-0 z-[55] bg-[#041627] flex flex-col items-center justify-center gap-6 translate-x-full md:hidden">
-<a href="index.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors">Home</a>
-<a href="ueber-uns.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors">Über uns</a>
-<a href="foerderung.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors">Förderung</a>
-<a href="sachkunde-34a.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors">Sachkunde 34A</a>
-<a href="faq.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors">FAQ</a>
+<div id="mobile-menu" class="fixed inset-0 z-[55] bg-[#041627] flex flex-col items-center justify-center gap-6 translate-x-full md:hidden notranslate text-translate">
+<a href="index.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors translate">Home</a>
+<a href="ueber-uns.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors translate">Über uns</a>
+<a href="foerderung.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors translate">Förderung</a>
+<a href="sachkunde-34a.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors translate">Sachkunde 34A</a>
+<a href="faq.html" class="font-headline text-4xl text-white/80 hover:text-secondary transition-colors translate">FAQ</a>
 <div class="w-16 h-px bg-white/20 my-4"></div>
 <a href="beratung.html" class="bg-secondary text-white px-10 py-4 rounded-md font-bold text-lg hover:brightness-110 transition-all shadow-xl">Jetzt bewerben</a>
 </div>
