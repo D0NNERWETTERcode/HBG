@@ -42,13 +42,10 @@
         .logo-img {
             transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
         /* Mobile Menu */
-        #mobile-menu {
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        #mobile-menu.open {
-            transform: translateX(0);
-        }
+        #mobile-menu { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        #mobile-menu.open { transform: translateX(0); }
         .ham-line {
             transition: all 0.3s ease;
         }
@@ -76,7 +73,7 @@ body { top: 0px !important; }
     to   { opacity: 1; transform: translateY(0)  scale(1); }
 }
 header.scrolled #lang-btn { color: #041627 !important; }
-        #mobile-menu-btn { display: flex !important; visibility: visible !important; opacity: 1 !important; z-index:9999 !important; background:none; border:none; cursor:pointer; padding:8px; } #mobile-menu-btn svg { width:24px; height:24px; display:block !important; visibility:visible !important; } #mobile-menu-btn svg line { transition: all 0.3s ease; stroke: white; stroke-width: 2; stroke-linecap: round; } #mobile-menu-btn.is-open svg #bar1 { transform: translateY(8px) rotate(45deg); transform-origin: center; } #mobile-menu-btn.is-open svg #bar2 { opacity: 0; } #mobile-menu-btn.is-open svg #bar3 { transform: translateY(-8px) rotate(-45deg); transform-origin: center; }
+                                #mobile-menu-btn { display: none !important; visibility: visible !important; opacity: 1 !important; z-index: 9999 !important; color: white !important; background: none; border: none; cursor: pointer; padding: 4px; } @media (max-width: 767px) { #mobile-menu-btn { display: flex !important; align-items: center; justify-content: center; } }     
 </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
@@ -117,7 +114,7 @@ header.scrolled #lang-btn { color: #041627 !important; }
   </div>
 </div>
 <a class="hidden md:inline-block bg-secondary text-white px-6 py-2.5 rounded-md font-medium text-sm hover:brightness-110 transition-all shadow-md" href="beratung.html">Jetzt bewerben</a>
-<button id="mobile-menu-btn" class="md:hidden notranslate shrink-0" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><line id="bar1" x1="3" y1="6" x2="21" y2="6"/><line id="bar2" x1="3" y1="12" x2="21" y2="12"/><line id="bar3" x1="3" y1="18" x2="21" y2="18"/></svg></button>
+<button id="mobile-menu-btn" class="notranslate" aria-label="Menu"><span class="material-symbols-outlined text-3xl">menu</span></button>
 </div>
 </div>
 </header>
@@ -290,6 +287,7 @@ header.scrolled #lang-btn { color: #041627 !important; }
     mobileMenuBtn.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.toggle('open');
         mobileMenuBtn.classList.toggle('is-open', isOpen);
+        mobileMenuBtn.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
         document.body.style.overflow = isOpen ? 'hidden' : '';
     });
     mobileMenu.querySelectorAll('a').forEach(link => {
