@@ -51,6 +51,7 @@
                 border-radius: 50% !important;
                 width: 44px !important; height: 44px !important;
                 align-items: center; justify-content: center;
+                order: 99;
             }
         }
         #btn-v8::before {
@@ -92,8 +93,6 @@
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="faq.html">FAQ</a>
 </nav>
 <div class="flex items-center gap-2 sm:gap-4">
-    <!-- DECOY BUTTON: Outside the switcher wrapper -->
-    <button id="btn-v8" class="notranslate" translate="no" aria-label="Toggle Navigation"></button>
 <div class="relative flex items-center gap-3 sm:gap-4" id="lang-switcher-wrap" translate="no">
   <button id="lang-btn" onclick="toggleLangMenu(event)" class="flex items-center gap-1.5 px-3 py-2 rounded-full text-white/70 hover:text-white transition-all duration-200" aria-label="Sprache wählen">
     <span class="material-symbols-outlined text-[18px]">language</span>
@@ -104,12 +103,18 @@
     <div class="grid grid-cols-5 gap-1">
       <button onclick="setLang('de','DE')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">DE</span><span class="text-[10px] text-slate-400 mt-0.5">Deutsch</span></button>
       <button onclick="setLang('en','EN')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">EN</span><span class="text-[10px] text-slate-400 mt-0.5">English</span></button>
-      <button onclick="setLang('sq','SQ')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">SQ</span><span class="text-[10px] text-slate-400 mt-0.5">Albanisch</span></button>
-      <button onclick="setLang('ar','AR')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">AR</span><span class="text-[10px] text-slate-400 mt-0.5">Arabisch</span></button>
-      <button onclick="setLang('fr','FR')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">FR</span><span class="text-[10px] text-slate-400 mt-0.5">Französisch</span></button>
+      <button onclick="setLang('sq','SQ')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">SQ</span><span class="text-[10px] text-slate-400 mt-0.5">Shqip</span></button>
+      <button onclick="setLang('ar','AR')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">AR</span><span class="text-[10px] text-slate-400 mt-0.5">العربية</span></button>
+      <button onclick="setLang('fr','FR')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">FR</span><span class="text-[10px] text-slate-400 mt-0.5">Français</span></button>
+      <button onclick="setLang('it','IT')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">IT</span><span class="text-[10px] text-slate-400 mt-0.5">Italiano</span></button>
+      <button onclick="setLang('pl','PL')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">PL</span><span class="text-[10px] text-slate-400 mt-0.5">Polski</span></button>
+      <button onclick="setLang('ru','RU')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">RU</span><span class="text-[10px] text-slate-400 mt-0.5">Русский</span></button>
+      <button onclick="setLang('es','ES')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">ES</span><span class="text-[10px] text-slate-400 mt-0.5">Español</span></button>
+      <button onclick="setLang('tr','TR')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">TR</span><span class="text-[10px] text-slate-400 mt-0.5">Türkçe</span></button>
     </div>
   </div>
 </div>
+    <button id="btn-v8" class="notranslate" translate="no" aria-label="Toggle Navigation"></button>
 <a class="hidden md:inline-block bg-secondary text-white px-6 py-2.5 rounded-md font-medium text-sm hover:brightness-110 transition-all shadow-lg" href="beratung.html">Jetzt bewerben</a>
 </div>
 </div>
