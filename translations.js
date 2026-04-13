@@ -49,6 +49,11 @@ function setLang(langCode, label) {
     evt.initEvent('change', false, true);
     select.dispatchEvent(evt);
   }
+
+  // Force nav button visibility after Google Translate processes the page
+  setTimeout(function() { _hbgForceNavBtn(); }, 800);
+  setTimeout(function() { _hbgForceNavBtn(); }, 2000);
+  setTimeout(function() { _hbgForceNavBtn(); }, 4000);
 }
 
 // Close dropdown on outside click
@@ -73,3 +78,62 @@ window.addEventListener('load', function () {
     }
   } catch(e) {}
 });
+
+// ── BUNKER-FIX 6.0: NAV-BUTTON GUARDIAN ─────────────────────────────
+// MutationObserver + setInterval watchdog ensures the mobile nav button
+// is NEVER hidden or removed by Google Translate DOM mutations.
+// The icon is rendered via CSS ::before (immune to GT), this guardian
+// only needs to ensure the button element itself stays visible.
+
+function _hbgForceNavBtn() {
+  var ids = ['btn-v8', 'nav-x1'];
+  for (var i = 0; i < ids.length; i++) {
+    var btn = document.getElementById(ids[i]);
+    if (btn && window.innerWidth < 768) {
+      btn.style.setProperty('display', 'flex', 'important');
+      btn.style.setProperty('visibility', 'visible', 'important');
+      btn.style.setProperty('opacity', '1', 'important');
+      btn.style.setProperty('pointer-events', 'auto', 'important');
+      btn.style.setProperty('z-index', '99999', 'important');
+      btn.style.setProperty('width', '44px', 'important');
+      btn.style.setProperty('height', '44px', 'important');
+      // Remove any <font> tags Google Translate may have injected
+      var fonts = btn.querySelectorAll('font');
+      for (var j = 0; j < fonts.length; j++) {
+        fonts[j].remove();
+      }
+    }
+  }
+}
+
+// MutationObserver watching for Google Translate DOM changes
+(function() {
+  if (typeof MutationObserver === 'undefined') return;
+
+  var headerEl = document.querySelector('header');
+  if (!headerEl) return;
+
+  var observer = new MutationObserver(function() {
+    _hbgForceNavBtn();
+  });
+
+  observer.observe(headerEl, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['style', 'class']
+  });
+
+  // Also observe body for Google Translate's wrapper injection
+  var bodyObserver = new MutationObserver(function() {
+    _hbgForceNavBtn();
+  });
+  bodyObserver.observe(document.body, {
+    childList: true,
+    attributes: true,
+    attributeFilter: ['style', 'class']
+  });
+})();
+
+// Fallback polling watchdog (every 500ms)
+setInterval(_hbgForceNavBtn, 500);
