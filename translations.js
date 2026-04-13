@@ -86,7 +86,7 @@ window.addEventListener('load', function () {
 // only needs to ensure the button element itself stays visible.
 
 function _hbgForceNavBtn() {
-  var ids = ['btn-v8', 'nav-x1'];
+  var ids = ['btn-v8', 'nav-x1', 'mobile-menu-btn'];
   for (var i = 0; i < ids.length; i++) {
     var btn = document.getElementById(ids[i]);
     if (btn && window.innerWidth < 768) {
