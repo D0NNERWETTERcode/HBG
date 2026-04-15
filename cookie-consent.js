@@ -1,9 +1,9 @@
 /**
- * Cookie Consent Manager – DSGVO/GDPR konforme Einwilligungslösung
+ * Cookie Consent Manager - DSGVO/GDPR konforme Einwilligungsl\u00f6sung
  * Deutsche Bildungsgesellschaft GmbH
  *
  * Kategorien:
- *   - notwendig   (immer aktiv, keine Einwilligung nötig)
+ *   - notwendig   (immer aktiv, keine Einwilligung n\u00f6tig)
  *   - statistik   (opt-in, deaktiviert by default)
  *   - marketing   (opt-in, deaktiviert by default)
  */
@@ -14,7 +14,7 @@
   const STORAGE_KEY = 'hbg_cookie_consent';
   const VERSION     = '1';
 
-  // ── CSS ─────────────────────────────────────────────────────────────────────
+  // \u2500\u2500 CSS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   const CSS = `
     :root {
       --cc-primary:   #041627;
@@ -85,7 +85,7 @@
     }
     #cc-modal.cc-visible #cc-modal-box { transform: scale(1); }
 
-    /* ── typography ── */
+    /* \u2500\u2500 typography \u2500\u2500 */
     .cc-logo { display:flex; align-items:center; gap:.625rem; margin-bottom:1.1rem; }
     .cc-logo svg { width:1.75rem; height:1.75rem; flex-shrink:0; }
     .cc-logo-text { font-size:.7rem; font-weight:700; letter-spacing:.1em;
@@ -97,7 +97,7 @@
     .cc-body { font-size:.82rem; color:#44474c; line-height:1.6; margin-bottom:1.4rem; }
     .cc-body a { color: var(--cc-secondary); text-decoration:underline; }
 
-    /* ── buttons ── */
+    /* \u2500\u2500 buttons \u2500\u2500 */
     .cc-btn-row { display:flex; gap:.6rem; flex-wrap:wrap; }
     .cc-btn {
       flex:1; min-width:7rem; padding:.65rem 1rem;
@@ -125,7 +125,7 @@
       background: #f3f4f5; color: var(--cc-primary); flex:none;
     }
 
-    /* ── toggles ── */
+    /* \u2500\u2500 toggles \u2500\u2500 */
     .cc-category { border-bottom:1px solid #f0f0f0; padding:.85rem 0; }
     .cc-category:last-child { border-bottom:none; }
     .cc-cat-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:.35rem; }
@@ -186,7 +186,7 @@
     }
   `;
 
-  // ── Helpers ──────────────────────────────────────────────────────────────────
+  // \u2500\u2500 Helpers \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   function injectCSS(css) {
     const el = document.createElement('style');
     el.textContent = css;
@@ -216,7 +216,7 @@
     window.dispatchEvent(new CustomEvent('hbgCookieConsent', { detail: data }));
   }
 
-  // ── Build HTML ───────────────────────────────────────────────────────────────
+  // \u2500\u2500 Build HTML \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   function buildBanner() {
     const wrap = document.createElement('div');
     wrap.innerHTML = `
@@ -235,11 +235,11 @@
           </svg>
           <span class="cc-logo-text">Deutsche Bildungsgesellschaft</span>
         </div>
-        <p class="cc-title">Wir respektieren Ihre Privatsphäre 🔒</p>
+        <p class="cc-title">Wir respektieren Ihre Privatsph\u00e4re \ud83d\udd12</p>
         <p class="cc-body">
-          Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. Technisch notwendige Cookies sind immer aktiv.
-          Alle anderen Kategorien sind optional – Ihre Wahl gilt jederzeit widerrufbar.
-          Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
+          Wir verwenden Cookies, um Ihnen die bestm\u00f6gliche Erfahrung zu bieten. Technisch notwendige Cookies sind immer aktiv.
+          Alle anderen Kategorien sind optional - Ihre Wahl gilt jederzeit widerrufbar.
+          Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerkl\u00e4rung</a>.
         </p>
         <div class="cc-btn-row">
           <button class="cc-btn cc-btn-accept-all" id="cc-accept-all">Alle akzeptieren</button>
@@ -253,10 +253,10 @@
         <div id="cc-modal-box">
           <div class="cc-modal-header">
             <span class="cc-modal-title">Cookie-Einstellungen</span>
-            <button class="cc-modal-close-btn" id="cc-modal-close" aria-label="Schließen">&#x2715;</button>
+            <button class="cc-modal-close-btn" id="cc-modal-close" aria-label="Schlie\u00dfen">&#x2715;</button>
           </div>
           <p class="cc-body">
-            Hier können Sie Ihre Einwilligung für jede Kategorie einzeln erteilen oder widerrufen.
+            Hier k\u00f6nnen Sie Ihre Einwilligung f\u00fcr jede Kategorie einzeln erteilen oder widerrufen.
             Die Einstellungen werden dauerhaft in Ihrem Browser gespeichert.
           </p>
 
@@ -273,7 +273,7 @@
               </div>
             </div>
             <p class="cc-cat-desc">
-              Diese Cookies sind für das grundlegende Funktionieren der Website erforderlich und können nicht deaktiviert werden. Sie speichern keine personenbezogenen Daten.
+              Diese Cookies sind f\u00fcr das grundlegende Funktionieren der Website erforderlich und k\u00f6nnen nicht deaktiviert werden. Sie speichern keine personenbezogenen Daten.
             </p>
           </div>
 
@@ -301,7 +301,7 @@
               </label>
             </div>
             <p class="cc-cat-desc">
-              Diese Cookies werden verwendet, um Ihnen relevante Werbung auf anderen Websites anzeigen zu können. Sie werden von Drittanbietern gesetzt und können Ihr Browsing-Verhalten nachverfolgen.
+              Diese Cookies werden verwendet, um Ihnen relevante Werbung auf anderen Websites anzeigen zu k\u00f6nnen. Sie werden von Drittanbietern gesetzt und k\u00f6nnen Ihr Browsing-Verhalten nachverfolgen.
             </p>
           </div>
 
@@ -314,14 +314,14 @@
       </div>
 
       <!-- Re-open button (always visible after consent) -->
-      <button id="cc-reopen-btn" class="cc-hidden" aria-label="Cookie-Einstellungen öffnen">
-        🍪 Cookies
+      <button id="cc-reopen-btn" class="cc-hidden" aria-label="Cookie-Einstellungen \u00f6ffnen">
+        \ud83c\udf6a Cookies
       </button>
     `;
     document.body.appendChild(wrap);
   }
 
-  // ── Logic ────────────────────────────────────────────────────────────────────
+  // \u2500\u2500 Logic \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   function init() {
     injectCSS(CSS);
     buildBanner();
@@ -413,14 +413,14 @@
     // Re-open button
     reopenBtn.addEventListener('click', openModal);
 
-    // ── Entscheidung treffen ──
+    // \u2500\u2500 Entscheidung treffen \u2500\u2500
     const existingConsent = getConsent();
     if (existingConsent) {
-      // Consent already given – expose it and show re-open button
+      // Consent already given - expose it and show re-open button
       window.HBGConsent = existingConsent.preferences;
       reopenBtn.classList.remove('cc-hidden');
     } else {
-      // No consent yet – show banner after short delay
+      // No consent yet - show banner after short delay
       setTimeout(showBanner, 600);
     }
   }
@@ -432,7 +432,7 @@
     init();
   }
 
-  // ── Public API ───────────────────────────────────────────────────────────────
+  // \u2500\u2500 Public API \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   window.HBGCookieConsent = {
     /** Returns the current preferences object, or null if no consent given yet */
     get: getConsent,

@@ -3,7 +3,7 @@ document.querySelectorAll('.material-symbols-outlined').forEach(function(icon) {
   icon.classList.add('notranslate');
 });
 
-// HBG Language Switcher – Google Translate Integration
+// HBG Language Switcher - Google Translate Integration
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'de',
@@ -79,7 +79,7 @@ window.addEventListener('load', function () {
   } catch(e) {}
 });
 
-// ── BUNKER-FIX 6.0: NAV-BUTTON GUARDIAN ─────────────────────────────
+// \u2500\u2500 BUNKER-FIX 6.0: NAV-BUTTON GUARDIAN \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 // MutationObserver + setInterval watchdog ensures the mobile nav button
 // is NEVER hidden or removed by Google Translate DOM mutations.
 // The icon is rendered via CSS ::before (immune to GT), this guardian
