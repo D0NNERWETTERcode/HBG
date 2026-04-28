@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow legal/utility pages from being indexed unnecessarily
+Disallow: /agb.html
+Disallow: /datenschutz.html
+Disallow: /impressum.html
+
+Sitemap: https://www.hbgcampus.de/sitemap.xml
