@@ -9,7 +9,7 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="HF Hanseatische Bildungsgesellschaft UG">
 <meta name="keywords" content="Weiterbildung Hamburg, Sachkunde 34a Hamburg, Bildungsgutschein, AZAV zertifiziert, IHK Prüfung, Sicherheitsfachkraft, kostenlose Weiterbildung">
-<link rel="canonical" href="https://www.hbgcampus.de/index.html">
+<link rel="canonical" href="https://www.hbgcampus.de/">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -239,7 +239,7 @@
 <!-- Heritage Masthead / Hero Section -->
 <section class="pt-24 md:pt-36 lg:pt-44 pb-12 md:pb-20 px-4 md:px-8 relative overflow-hidden bg-[#041627] text-white min-h-[85vh] md:min-h-0 flex flex-col justify-center">
 <div class="absolute inset-0 z-0">
-<img alt="Hanseatic Port View" class="w-full h-full object-cover" data-alt="Modern maritime architecture of a Hanseatic port city" src="hero_elbphilharmonie.png">
+<img alt="HBG Campus Hamburg – Weiterbildungszentrum Sachkunde 34a" class="w-full h-full object-cover" src="hero_elbphilharmonie.png">
 <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
 <div class="absolute inset-0 hanseatic-gradient opacity-60"></div>
 </div>
@@ -914,7 +914,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
+  "@type": ["EducationalOrganization", "LocalBusiness"],
   "name": "HF Hanseatische Bildungsgesellschaft UG",
   "alternateName": "HBG Campus",
   "url": "https://www.hbgcampus.de",
@@ -928,12 +928,18 @@
     "postalCode": "22297",
     "addressCountry": "DE"
   },
-  "email": "info@hbgcampus.de",
-  "telephone": "+49-40-0000000",
-  "areaServed": {
-    "@type": "Country",
-    "name": "Deutschland"
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "53.6011",
+    "longitude": "10.0097"
   },
+  "email": "info@hbgcampus.de",
+  "telephone": "+4915792624337",
+  "priceRange": "Kostenlos (Bildungsgutschein)",
+  "areaServed": [
+    {"@type": "City", "name": "Hamburg"},
+    {"@type": "Country", "name": "Deutschland"}
+  ],
   "hasCredential": {
     "@type": "EducationalOccupationalCredential",
     "name": "AZAV-Zertifizierung"
@@ -967,7 +973,8 @@
     }
   ],
   "sameAs": [
-    "https://www.hbgcampus.de"
+    "https://www.hbgcampus.de",
+    "https://share.google/ty9FZzOgyIAbz4JIh"
   ]
 }
 </script>
@@ -986,6 +993,15 @@
     },
     "query-input": "required name=search_term_string"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.hbgcampus.de/"}
+  ]
 }
 </script>
 </body></html>

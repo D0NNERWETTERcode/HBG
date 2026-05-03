@@ -543,9 +543,38 @@ header.scrolled #lang-btn { color: #041627 !important; }
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.hbgcampus.de"},
-      {"@type": "ListItem", "position": 2, "name": "Förderung", "item": "https://www.hbgcampus.de/foerderung.html"}
+      {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.hbgcampus.de/"},
+      {"@type": "ListItem", "position": 2, "name": "Förderung & Bildungsgutschein", "item": "https://www.hbgcampus.de/foerderung.html"}
     ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Geförderter Weiterbildungskurs – Bildungsgutschein",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "HF Hanseatische Bildungsgesellschaft UG",
+    "url": "https://www.hbgcampus.de",
+    "telephone": "+4915792624337",
+    "sameAs": ["https://share.google/ty9FZzOgyIAbz4JIh"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kapstadtring 7",
+      "addressLocality": "Hamburg",
+      "postalCode": "22297",
+      "addressCountry": "DE"
+    }
+  },
+  "areaServed": {"@type": "City", "name": "Hamburg"},
+  "isRelatedTo": "Bildungsgutschein, AZAV-Zertifizierung, Sachkunde §34a",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "100% kostenlos über Bildungsgutschein der Agentur für Arbeit oder des Jobcenters"
   }
 }
 </script>
