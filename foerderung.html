@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="de"><head>
+﻿<!DOCTYPE html><html lang="de"><head>
 <meta charset="utf-8">
 <link rel="icon" href="/favicon.png" type="image/png">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -192,7 +192,7 @@ header.scrolled #lang-btn { color: #041627 !important; }
 <!-- Language Switcher -->
 <div class="relative" id="lang-switcher-wrap">
   <button id="lang-btn" onclick="toggleLangMenu(event)" class="flex items-center gap-1.5 px-3 py-2 rounded-full text-white/70 hover:text-white transition-all duration-200" aria-label="Sprache w&auml;hlen">
-    <span class="material-symbols-outlined text-[18px]">language</span>
+    <span class="material-symbols-outlined text-[18px]" aria-hidden="true">language</span>
     <span class="text-sm font-bold tracking-wide" id="lang-btn-label">DE</span>
   </button>
   <div id="lang-dropdown" class="hidden absolute right-0 top-[calc(100%+12px)] bg-white rounded-3xl shadow-2xl p-4 sm:p-5 w-[300px] sm:w-[330px] z-[200] border border-slate-100">
