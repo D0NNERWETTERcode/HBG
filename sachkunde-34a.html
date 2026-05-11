@@ -330,7 +330,10 @@
   <div class="max-w-screen-xl mx-auto px-4 md:px-8">
     <div class="text-center mb-12">
       <span class="font-bold text-xs uppercase tracking-[0.2em] text-slate-400 mb-3 block">Anforderungen</span>
-      <h2 class="font-headline text-3xl md:text-4xl text-primary font-bold">Zugangsvoraussetzungen</h2>
+      <h2 class="font-headline text-3xl md:text-4xl text-primary font-bold">Wer braucht den §34a Schein?</h2>
+      <div class="border-l-4 border-primary bg-surface-container-low p-5 mt-4 mb-8 rounded-r-xl geo-answer">
+        <p class="font-semibold text-on-surface leading-relaxed">Den §34a Schein (Sachkundeprüfung) brauchen alle Personen, die im Bewachungsgewerbe als Türsteher, im Personenschutz, Objektschutz oder im Geld- und Werttransport tätig werden wollen. Er ist gesetzlich vorgeschrieben und wird bei der IHK abgelegt. Voraussetzungen: Mindestalter 18 Jahre, Deutschkenntnisse B2, einwandfreies Führungszeugnis.</p>
+      </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
       <div class="bg-[#041627] text-white rounded-3xl p-8 text-center flex flex-col items-center gap-4">
@@ -630,4 +633,48 @@
   ]
 }
 </script>
-</body></html>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Wie bekomme ich den §34a Schein?",
+  "description": "Schritt-für-Schritt Anleitung zur Sachkundeprüfung nach §34a GewO über den Online-Kurs der HBG Campus.",
+  "totalTime": "P50D",
+  "supply": [{"@type": "HowToSupply", "name": "Bildungsgutschein (kostenlos beantragen)"}],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Kostenlose Beratung buchen",
+      "text": "Kontaktieren Sie HBG Campus telefonisch oder über das Kontaktformular. Wir prüfen Ihre Förderfähigkeit und erstellen alle Unterlagen für den Bildungsgutschein.",
+      "url": "https://www.hbgcampus.de/beratung.html"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Bildungsgutschein beantragen",
+      "text": "Mit unseren Unterlagen vereinbaren Sie einen Termin beim Jobcenter oder der Agentur für Arbeit und beantragen den Bildungsgutschein nach §81 SGB III.",
+      "url": "https://www.hbgcampus.de/foerderung.html"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "50-tägigen Online-Kurs absolvieren",
+      "text": "Im 100% digitalen Intensivkurs lernen Sie alle Inhalte der §34a-Prüfung: Recht, Deeskalation, Erste Hilfe, Sicherheitstechnik und mehr."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "IHK-Prüfung ablegen",
+      "text": "Sie legen die offizielle Sachkundeprüfung bei der IHK in Ihrer Nähe ab. Das Zertifikat ist bundesweit gültig und unbefristet."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SpeakableSpecification",
+  "cssSelector": [".geo-answer", "h1", "h2"]
+}
+</script></body></html>
