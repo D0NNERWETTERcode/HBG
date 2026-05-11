@@ -58,6 +58,10 @@
         color: #041627 !important;
         font-weight: 600;
     }
+    header.scrolled .nav-link, header.scrolled #lang-btn, header.scrolled #lang-btn-label {
+        color: #041627 !important;
+        font-weight: 600;
+    }
     header.scrolled .nav-link:hover {
         color: #775a19 !important;
     }
@@ -105,7 +109,7 @@
 <img alt="HBG Logo Light" class="h-full w-auto logo-img logo-light absolute inset-0 opacity-100" src="logo_light.png">
 <img alt="HBG Logo Dark" class="h-full w-auto logo-img logo-dark absolute inset-0 opacity-0" src="logo_dark.png">
 </a>
-<nav class="hidden md:flex items-center space-x-10">
+<nav class="hidden md:flex items-center gap-4 xl:gap-8">
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="index.html">Home</a>
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="ueber-uns.html">&Uuml;ber uns</a>
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="foerderung.html">F&ouml;rderung</a>
@@ -115,6 +119,28 @@
 <a class="font-headline font-medium text-lg leading-tight text-white/70 hover:text-secondary transition-all nav-link" href="blog.html">Blog</a>
 </nav>
 <div class="flex items-center gap-3">
+<!-- Language Switcher -->
+<div class="relative" id="lang-switcher-wrap">
+  <button id="lang-btn" onclick="toggleLangMenu(event)" class="flex items-center gap-1.5 px-3 py-2 rounded-full text-white/70 hover:text-white transition-all duration-200" aria-label="Sprache w&auml;hlen">
+    <span class="material-symbols-outlined text-[18px]" aria-hidden="true">language</span>
+    <span class="text-sm font-bold tracking-wide" id="lang-btn-label">DE</span>
+  </button>
+  <div id="lang-dropdown" class="hidden absolute right-0 top-[calc(100%+12px)] bg-white rounded-3xl shadow-2xl p-4 sm:p-5 w-[300px] sm:w-[330px] z-[200] border border-slate-100">
+    <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">Sprache w&#228;hlen</p>
+    <div class="grid grid-cols-5 gap-1">
+      <button onclick="setLang('de','DE')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">DE</span><span class="text-[10px] text-slate-400 mt-0.5">Deutsch</span></button>
+      <button onclick="setLang('en','EN')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">EN</span><span class="text-[10px] text-slate-400 mt-0.5">English</span></button>
+      <button onclick="setLang('sq','SQ')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">SQ</span><span class="text-[10px] text-slate-400 mt-0.5">Albanisch</span></button>
+      <button onclick="setLang('ar','AR')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">AR</span><span class="text-[10px] text-slate-400 mt-0.5">Arabisch</span></button>
+      <button onclick="setLang('fr','FR')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">FR</span><span class="text-[10px] text-slate-400 mt-0.5">Franz&#246;sisch</span></button>
+      <button onclick="setLang('it','IT')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">IT</span><span class="text-[10px] text-slate-400 mt-0.5">Italienisch</span></button>
+      <button onclick="setLang('pl','PL')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">PL</span><span class="text-[10px] text-slate-400 mt-0.5">Polnisch</span></button>
+      <button onclick="setLang('ru','RU')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">RU</span><span class="text-[10px] text-slate-400 mt-0.5">Russisch</span></button>
+      <button onclick="setLang('es','ES')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">ES</span><span class="text-[10px] text-slate-400 mt-0.5">Spanisch</span></button>
+      <button onclick="setLang('tr','TR')" class="lang-opt flex flex-col items-center p-2.5 rounded-2xl hover:bg-slate-50 transition-colors group"><span class="font-bold text-sm text-[#041627] group-hover:text-[#775a19] transition-colors">TR</span><span class="text-[10px] text-slate-400 mt-0.5">T&#252;rkisch</span></button>
+    </div>
+  </div>
+</div>
 <a class="hidden md:inline-block bg-secondary text-white px-6 py-2.5 rounded-md font-medium text-sm hover:brightness-110 transition-all shadow-lg" href="beratung.html">Jetzt bewerben</a>
 <button id="mobile-menu-btn" class="notranslate" translate="no" aria-label="Toggle Navigation"></button>
 </div>
