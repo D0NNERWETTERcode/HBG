@@ -420,8 +420,8 @@
       window.HBGConsent = existingConsent.preferences;
       reopenBtn.classList.remove('cc-hidden');
     } else {
-      // No consent yet - show banner after short delay
-      setTimeout(showBanner, 600);
+      // No consent yet - show banner after main content has painted (LCP fix)
+      setTimeout(showBanner, 2500);
     }
   }
 
