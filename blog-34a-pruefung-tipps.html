@@ -14,11 +14,19 @@
 <meta property="og:image" content="https://www.hbgcampus.de/students_learning.png">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="HF Hanseatische Bildungsgesellschaft">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,700;1,6..72,400&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
-<link rel="stylesheet" href="hbg.css">
+<style>
+*,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
+html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:Manrope,ui-sans-serif,system-ui,sans-serif}
+body{margin:0;background:#f8f9fa;color:#191c1d;-webkit-font-smoothing:antialiased}
+header{position:fixed;top:0;width:100%;z-index:50;background:rgba(4,22,39,.98);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.05);transition:all .8s cubic-bezier(.4,0,.2,1)}
+.hanseatic-gradient{background:radial-gradient(circle at top right,#1a2b3c,#041627)}
+section{display:block}main{display:block}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:inherit}
+</style>
+<link rel="preload" href="hbg.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="hbg.css"></noscript>
 <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#041627","secondary":"#775a19","surface":"#f8f9fa","surface-container-low":"#f3f4f5","on-surface":"#191c1d","on-surface-variant":"#44474c"},fontFamily:{"headline":["Newsreader"],"body":["Manrope"]}}}}</script>
 <style>
     @font-face { font-display: swap; }
