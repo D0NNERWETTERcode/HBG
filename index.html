@@ -27,14 +27,14 @@
 <meta name="twitter:image" content="https://www.hbgcampus.de/hero_elbphilharmonie.png">
 
 <!-- Performance: Preconnect -->
-<link rel="preload" as="image" href="hero_elbphilharmonie.png" fetchpriority="high">
+<link rel="preload" as="image" href="hero_elbphilharmonie.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
 
 <!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -193,8 +193,8 @@
 <header class="fixed top-0 w-full z-50 bg-[#041627]/98 backdrop-blur-xl shadow-lg border-b border-white/5 notranslate">
 <div class="max-w-screen-2xl mx-auto flex justify-between items-center h-[80px] md:h-[120px] px-4 md:px-8 nav-container transition-all duration-500">
 <a class="flex items-center relative h-[55px] w-36 md:h-[80px] md:w-48" href="index.html">
-<img alt="HBG Logo Light" class="h-full w-auto logo-img logo-light absolute inset-0 opacity-100" src="logo_light.png" width="200" height="80">
-<img alt="HBG Logo Dark" class="h-full w-auto logo-img logo-dark absolute inset-0 opacity-0" src="logo_dark.png" width="200" height="80">
+<img alt="HBG Logo Light" class="h-full w-auto logo-img logo-light absolute inset-0 opacity-100" src="logo_light.webp" width="200" height="80">
+<img alt="HBG Logo Dark" class="h-full w-auto logo-img logo-dark absolute inset-0 opacity-0" src="logo_dark.webp" width="200" height="80">
 </a>
 <nav class="hidden md:flex items-center space-x-10 translate">
 <a class="font-headline font-medium text-lg leading-tight text-white hover:text-secondary transition-all nav-link" href="index.html">Home</a>
@@ -249,7 +249,7 @@
 <!-- Heritage Masthead / Hero Section -->
 <section class="pt-24 md:pt-36 lg:pt-44 pb-12 md:pb-20 px-4 md:px-8 relative overflow-hidden bg-[#041627] text-white min-h-[85vh] md:min-h-0 flex flex-col justify-center">
 <div class="absolute inset-0 z-0">
-<img alt="HBG Campus Hamburg – Weiterbildungszentrum Sachkunde 34a" class="w-full h-full object-cover" src="hero_elbphilharmonie.png">
+<img alt="HBG Campus Hamburg – Weiterbildungszentrum Sachkunde 34a" class="w-full h-full object-cover" src="hero_elbphilharmonie.webp">
 <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
 <div class="absolute inset-0 hanseatic-gradient opacity-60"></div>
 </div>
@@ -374,7 +374,7 @@
 
 <!-- Team Card with Floating Google Badge -->
 <div class="relative bg-primary rounded-3xl overflow-hidden editorial-shadow flex flex-col justify-end min-h-[500px] border border-outline-variant/20 group">
-    <img src="team.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="HBG Team" loading="lazy">
+    <img src="team.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="HBG Team" loading="lazy">
     <div class="absolute inset-0 bg-gradient-to-t from-[#041627] via-[#041627]/60 to-[#041627]/10"></div>
     <div class="relative z-10 p-6 md:p-8 text-white w-full">
         <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl mb-8 shadow-lg inline-block w-full">
@@ -512,7 +512,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <!-- Card 1: Ganz Deutschland -->
                 <a href="beratung.html" class="rounded-[3rem] min-h-[450px] relative overflow-hidden group block shadow-2xl">
-                    <img src="germany_map_subtle.png" alt="Ganz Deutschland" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
+                    <img src="germany_map_subtle.webp" alt="Ganz Deutschland" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div class="absolute inset-0 bg-primary/40 backdrop-blur-[1px] group-hover:bg-primary/20 transition-colors duration-500"></div>
                     <div class="relative p-5 md:p-10 md:p-12 flex flex-col justify-between h-full z-10">
                         <div>
@@ -533,12 +533,12 @@
                 
                 <!-- Card 2: Students Image -->
                 <a href="beratung.html" class="rounded-[3rem] overflow-hidden min-h-[450px] relative group block shadow-2xl">
-                    <img src="students_learning.png" alt="Students learning" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
+                    <img src="students_learning.webp" alt="Students learning" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                 </a>
                 
                 <!-- Card 3: Starkes Netzwerk -->
                 <a href="beratung.html" class="rounded-[3rem] min-h-[450px] relative overflow-hidden group block shadow-2xl">
-                    <img src="network_connections.png" alt="Starkes Netzwerk" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
+                    <img src="network_connections.webp" alt="Starkes Netzwerk" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                     <div class="absolute inset-0 bg-[#041627]/80 backdrop-blur-[1px] group-hover:bg-[#041627]/60 transition-colors duration-500"></div>
                     <div class="relative p-5 md:p-10 md:p-12 flex flex-col justify-between h-full z-10 text-white">
                         <div>
@@ -560,7 +560,7 @@
                 
                 <!-- Card 4: Professional Office -->
                 <a href="beratung.html" class="rounded-[3rem] overflow-hidden min-h-[450px] relative group block shadow-2xl">
-                    <img src="business_office.png" alt="Business environment" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
+                    <img src="business_office.webp" alt="Business environment" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" loading="lazy">
                 </a>
             </div>
         </div>
@@ -583,13 +583,13 @@
                     </a>
                 </div>
                 <div class="w-full md:w-[55%] h-[400px] md:h-auto relative">
-                    <img src="jobs_banner.png" alt="Stellenangebote" class="w-full h-full object-cover" loading="lazy">
+                    <img src="jobs_banner.webp" alt="Stellenangebote" class="w-full h-full object-cover" loading="lazy">
                     <!-- Gradient overlay to blend left side -->
                     <div class="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white via-white/80 to-transparent hidden md:block"></div>
                 </div>
                 <!-- Bottom Logo Badge like Screenshot -->
                 <div class="absolute bottom-6 left-6 md:bottom-12 md:left-12 flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 pr-8 rounded-full shadow-lg border border-slate-100">
-                    <img src="logo_dark.png" class="h-8 w-auto" alt="HBG Logo">
+                    <img src="logo_dark.webp" class="h-8 w-auto" alt="HBG Logo">
                     <div class="h-6 w-px bg-slate-200"></div>
                     <span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Hanseatische <br> Bildungsgesellschaft</span>
                 </div>
@@ -608,7 +608,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 overflow-hidden">
                 <!-- Card 1 -->
                 <div class="rounded-[3rem] h-[580px] relative group overflow-hidden shadow-2xl border border-slate-100">
-                    <img src="law_book_paragraph_premium.png" class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" alt="Staatlich zugelassen" loading="lazy">
+                    <img src="law_book_paragraph_premium.webp" class="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" alt="Staatlich zugelassen" loading="lazy">
                     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white px-8 py-5 rounded-3xl shadow-xl w-[85%] flex items-center justify-between">
                         <span class="font-bold text-primary">Staatlich zugelassen</span>
                         <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center">
@@ -618,7 +618,7 @@
                 </div>
                 <!-- Card 2 -->
                 <div class="rounded-[3rem] h-[580px] relative group overflow-hidden shadow-2xl border border-slate-100">
-                    <img src="modern_high_tech_classroom.png" class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" alt="Modern Tech" loading="lazy">
+                    <img src="modern_high_tech_classroom.webp" class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" alt="Modern Tech" loading="lazy">
                     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white px-8 py-5 rounded-3xl shadow-xl w-[85%] flex items-center justify-between">
                         <span class="font-bold text-primary">Modernste Technik</span>
                         <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center">
@@ -628,7 +628,7 @@
                 </div>
                 <!-- Card 3 -->
                 <div class="rounded-[3rem] h-[580px] relative group overflow-hidden shadow-2xl border border-slate-100">
-                    <img src="security_training_roleplay.png" class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" alt="Practical Training" loading="lazy">
+                    <img src="security_training_roleplay.webp" class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" alt="Practical Training" loading="lazy">
                     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white px-8 py-5 rounded-3xl shadow-xl w-[85%] flex items-center justify-between">
                         <span class="font-bold text-primary">Hoher Praxisbezug</span>
                         <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center">
@@ -638,7 +638,7 @@
                 </div>
                 <!-- Card 4 -->
                 <div class="rounded-[3rem] h-[580px] relative group overflow-hidden shadow-2xl border border-slate-100">
-                    <img src="older_professor_consultant.png" class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" alt="Faculty" loading="lazy">
+                    <img src="older_professor_consultant.webp" class="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-105" alt="Faculty" loading="lazy">
                     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white px-8 py-5 rounded-3xl shadow-xl w-[85%] flex items-center justify-between">
                         <span class="font-bold text-primary">Professionelle Dozenten</span>
                         <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center">
@@ -781,7 +781,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Help Center Card -->
                 <div class="rounded-[2.5rem] h-[500px] md:h-[600px] relative group overflow-hidden bg-slate-100">
-                    <img src="help_center_agent.png" alt="Help Center" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" loading="lazy">
+                    <img src="help_center_agent.webp" alt="Help Center" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#041627]/60 via-transparent to-transparent"></div>
                     <div class="absolute top-6 right-6 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300">
                         <a href="faq.html" class="w-full h-full flex items-center justify-center">
@@ -796,7 +796,7 @@
 
                 <!-- Kontakt Card -->
                 <div class="rounded-[2.5rem] h-[500px] md:h-[600px] relative group overflow-hidden bg-slate-100">
-                    <img src="contact_consultation.png" alt="Kontakt" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" loading="lazy">
+                    <img src="contact_consultation.webp" alt="Kontakt" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#041627]/60 via-transparent to-transparent"></div>
                     <div class="absolute top-6 right-6 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300">
                         <a href="beratung.html" class="w-full h-full flex items-center justify-center">
@@ -816,7 +816,7 @@
             <div class="bg-[#041627] rounded-[2.5rem] py-10 md:py-20 px-8 text-center relative overflow-hidden flex flex-col items-center shadow-2xl">
                 <!-- Blurred bg effect -->
                 <div class="absolute inset-0 opacity-40">
-                    <img src="contact_consultation.png" class="w-full h-full object-cover blur-[20px] scale-110" alt="" loading="lazy">
+                    <img src="contact_consultation.webp" class="w-full h-full object-cover blur-[20px] scale-110" alt="" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#041627] to-[#041627]/80"></div>
                 </div>
                 
@@ -858,7 +858,7 @@
     <!-- Logo + Address -->
     <div class="flex flex-col gap-5 lg:min-w-[220px]">
       <a href="index.html" class="inline-block">
-        <img alt="HBG Logo" class="h-14 md:h-16 w-auto" src="logo_light.png" width="200" height="80">
+        <img alt="HBG Logo" class="h-14 md:h-16 w-auto" src="logo_light.webp" width="200" height="80">
       </a>
       <p class="text-white/40 text-xs leading-relaxed max-w-[200px]">
         HF Hanseatische Bildungsgesellschaft UG<br>Kapstadtring 7<br>22297 Hamburg
