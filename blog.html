@@ -22,12 +22,10 @@
 <!-- Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,700;1,6..72,400&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#041627", "secondary": "#775a19", "secondary-container": "#fed488", "on-secondary-container": "#785a1a", "surface": "#f8f9fa", "surface-container-low": "#f3f4f5", "on-surface": "#191c1d", "on-surface-variant": "#44474c", "outline-variant": "#c4c6cd" }, fontFamily: { "headline": ["Newsreader"], "body": ["Manrope"], "label": ["Manrope"] }, borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"} } } }
-</script>
+<link rel="stylesheet" href="hbg.css">
+
 <style>
     @font-face { font-display: swap; }
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-family: 'Material Symbols Outlined' !important; }
@@ -237,7 +235,7 @@ mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', 
 function toggleLangMenu(e) { e.stopPropagation(); document.getElementById('lang-dropdown').classList.toggle('hidden'); }
 document.addEventListener('click', () => document.getElementById('lang-dropdown').classList.add('hidden'));
 </script>
-<script src="translations.js"></script>
+<script src="translations.js" defer></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Blog","name":"HBG Campus Blog","url":"https://www.hbgcampus.de/blog.html","description":"Ratgeber und Tipps rund um Weiterbildung, Sachkunde §34a und Bildungsgutschein.","publisher":{"@type":"EducationalOrganization","name":"HF Hanseatische Bildungsgesellschaft UG","url":"https://www.hbgcampus.de","telephone":"+4915792624337"}}
 </script>

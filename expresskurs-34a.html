@@ -13,35 +13,13 @@
 <!-- Performance: Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
 
 <!-- Fonts & Icons -->
-<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,700;1,6..72,400&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
 
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#041627",
-              "secondary": "#775a19",
-              "surface": "#f8f9fa",
-              "surface-container-low": "#f3f4f5",
-              "on-surface": "#191c1d",
-              "on-surface-variant": "#44474c"
-            },
-            fontFamily: {
-              "headline": ["Newsreader"],
-              "body": ["Manrope"],
-              "label": ["Manrope"]
-            }
-          }
-        }
-      }
-</script>
+<link rel="stylesheet" href="hbg.css">
+
 <style>
     @font-face { font-display: swap; }
     .hanseatic-gradient {
@@ -388,8 +366,8 @@
         document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 </script>
-<script src="cookie-consent.js"></script>
-<script src="translations.js"></script>
+<script src="cookie-consent.js" defer></script>
+<script src="translations.js" defer></script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 <div id="google_translate_element" style="display:none"></div>
 </body></html>
