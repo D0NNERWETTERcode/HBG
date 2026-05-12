@@ -16,11 +16,12 @@
 <meta property="og:site_name" content="HF Hanseatische Bildungsgesellschaft">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#041627","secondary":"#775a19","surface":"#f8f9fa","surface-container-low":"#f3f4f5","on-surface":"#191c1d","on-surface-variant":"#44474c"},fontFamily:{"headline":["Newsreader"],"body":["Manrope"]}}}}</script>
 <style>
+    @font-face { font-display: swap; }
   .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;font-family:'Material Symbols Outlined'!important;}
   header{transition:all 0.8s cubic-bezier(0.4,0,0.2,1);}
   header.scrolled{background-color:rgba(255,255,255,0.7)!important;box-shadow:0 10px 30px -10px rgba(0,0,0,0.1)!important;}
@@ -56,8 +57,8 @@
 <header class="fixed top-0 w-full z-50 bg-[#041627]/98 backdrop-blur-xl shadow-lg border-b border-white/5 notranslate">
 <div class="max-w-screen-2xl mx-auto flex justify-between items-center h-[80px] md:h-[120px] px-4 md:px-8">
 <a class="flex items-center relative h-[55px] w-36 md:h-[80px] md:w-48" href="index.html">
-<img alt="HBG Logo" class="h-full w-auto logo-img logo-light absolute inset-0 opacity-100" src="logo_light.png">
-<img alt="HBG Logo Dark" class="h-full w-auto logo-img logo-dark absolute inset-0 opacity-0" src="logo_dark.png">
+<img alt="HBG Logo" class="h-full w-auto logo-img logo-light absolute inset-0 opacity-100" src="logo_light.png" width="200" height="80">
+<img alt="HBG Logo Dark" class="h-full w-auto logo-img logo-dark absolute inset-0 opacity-0" src="logo_dark.png" width="200" height="80">
 </a>
 <nav class="hidden md:flex items-center space-x-8">
 <a class="font-headline font-medium text-lg text-white/70 hover:text-secondary transition-all nav-link" href="index.html">Home</a>
