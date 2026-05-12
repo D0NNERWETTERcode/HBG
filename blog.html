@@ -54,7 +54,12 @@ tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "
   header.scrolled #lang-btn { color: #041627 !important; }
   .blog-card:hover .blog-img { transform: scale(1.05); }
   .blog-img { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
-</style>
+        /* Hide Google Translate Toolbar */
+        .VIpgJd-ZVi9od-ORHb-OEVmcd { display: none !important; }
+        .goog-te-banner-frame { display: none !important; }
+        body { top: 0 !important; }
+        .goog-te-gadget-icon { display: none !important; }
+    </style>
 </head>
 <body class="bg-surface text-on-surface font-body antialiased">
 <header class="fixed top-0 w-full z-50 bg-[#041627]/98 backdrop-blur-xl shadow-lg border-b border-white/5 notranslate">
